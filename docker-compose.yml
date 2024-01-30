@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  telebot:
+    build: ./telebot
+    ports:
+      - "8001:8001"
+    environment:
+      - TOKEN=${TOKEN}
+      - GROUP_CHAT_ID=${GROUP_CHAT_ID}
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2048M
+
+  pipeline:
+    build: ./pipeline
+    depends_on:
+      - telebot
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'  
+          memory: 1024M

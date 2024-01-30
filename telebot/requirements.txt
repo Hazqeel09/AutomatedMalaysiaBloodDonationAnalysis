@@ -1,0 +1,7 @@
+matplotlib
+fastapi
+uvicorn[standard]
+requests
+httpx
+pyarrow
+pandas
