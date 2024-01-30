@@ -120,8 +120,7 @@ def create_image_and_captions(df):
         # Adjust secondary axis legend (inside the plot)
         ax2.legend(loc="upper right")
 
-        # Adjust the layout to make room for the legend
-        plt.tight_layout(rect=[0, 0, 0.85, 1])  # Adjust the rect parameter as needed
+        plt.tight_layout(rect=[0, 0, 0.85, 1])
 
         plot_stream = BytesIO()
         plt.savefig(plot_stream, format="png", bbox_inches="tight")

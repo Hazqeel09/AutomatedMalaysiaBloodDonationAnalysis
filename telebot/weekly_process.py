@@ -321,13 +321,11 @@ def donation_by_facility(weekly_data):
                 linestyle=next(line_styles),
             )
 
-    # Plot settings
     plt.title("This Week Blood Donation based on Facility")
     plt.xlabel("Date")
      # Set x-ticks to be the unique dates
     ax1.set_xticks(unique_dates)
     ax1.set_xticklabels([date.strftime('%d-%m-%Y') for date in unique_dates], rotation=45)  # Formatting date and rotating labels for readability
-    # ax1.set_xticks(range(1, 8))  # Set x-ticks to be each month
     ax1.grid(True)
 
     # Adjust primary axis legend (outside the plot)
@@ -336,8 +334,7 @@ def donation_by_facility(weekly_data):
     # Adjust secondary axis legend (inside the plot)
     ax2.legend(loc="upper right")
 
-    # Adjust the layout to make room for the legend
-    plt.tight_layout(rect=[0, 0, 0.85, 1])  # Adjust the rect parameter as needed
+    plt.tight_layout(rect=[0, 0, 0.85, 1])
 
     plot_stream = BytesIO()
     plt.savefig(plot_stream, format="png", bbox_inches="tight")
